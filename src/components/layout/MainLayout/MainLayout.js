@@ -3,11 +3,11 @@ import PageNav from '../PageNav/PageNav';
 
 
 const MainLayout =props=> (
-    
-     <div>{props.children}
+  <div>{props.children}
      <PageNav/>
      </div>
     
 )
+
 
 export default MainLayout;

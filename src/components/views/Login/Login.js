@@ -1,10 +1,10 @@
-import React from "react";
-import styles from "./Login.module.scss";
+import React from 'react';
+import styles from './Login.module.scss';
 
 function Login() {
-    return(
+    return (
         <div classname={styles.component}>
-<h2>Login View</h2>
+            <h2>Login View</h2>
         </div>
     )
 }

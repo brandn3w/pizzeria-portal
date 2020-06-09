@@ -7,19 +7,29 @@ const Tables = () => (
 
     <div>
         <h2>Tables View</h2>
-  
-    <div>
-        <Link to={`${process.env.PUBLIC_URL}/tables/booking/123abc`} activeClassName="active">
-            Tables/booking/123abc
+
+        <div>
+            <Link to={`${process.env.PUBLIC_URL}/tables/booking/123abc`} activeClassName="active">
+                Tables/booking/123abc
             </Link>
-    </div>
-    <div>
-        <Link to={`${process.env.PUBLIC_URL}/tables/booking/new`} activeClassName="active">
-            Tables/booking/new
+        </div>
+        <div>
+            <Link to={`${process.env.PUBLIC_URL}/tables/booking/new`} activeClassName="active">
+                Tables/booking/new
       </Link>
+        </div>
+        <div>
+            <Link to={`${process.env.PUBLIC_URL}/tables/events/new`} activeClassName="active">
+                Tables/events/new
+      </Link>
+            <div>
+                <Link to={`${process.env.PUBLIC_URL}/tables/events/123abc`} activeClassName="active">
+                    Tables/booking/new
+      </Link>
+            </div>
+        </div>
     </div>
-    </div>
-    )
+)
 
 
 export default Tables;

@@ -1,10 +1,10 @@
-import React from "react";
+import React from 'react';
 
 
 function Dashboard() {
-    return(
+    return (
         <div >
-<h2>Dashboard</h2>
+            <h2>Dashboard</h2>
         </div>
     )
 }
