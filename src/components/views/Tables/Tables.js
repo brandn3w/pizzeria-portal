@@ -1,11 +1,11 @@
 import React from 'react';
-//import styles from './Tables.module.scss';
+import styles from './Tables.module.scss';
 import { Link } from 'react-router-dom';
 
 
 const Tables = () => (
 
-    <div>
+    <div classname={styles.component}>
         <h2>Tables View</h2>
 
         <div>
