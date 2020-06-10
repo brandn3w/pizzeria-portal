@@ -12,11 +12,23 @@ import TablesEventsId from './components/views/Tables/TablesEventsId';
 import TablesEventsNew from './components/views/Tables/TablesEventsNew';
 import WaiterOrderId from './components/views/Waiter/WaiterOrderId';
 import WaiterOrderNew from './components/views/Waiter/WaiterOrderNew';
+import { StylesProvider } from '@material-ui/core/styles';
+import { createMuiTheme } from '@material-ui/core/styles';
+import { ThemeProvider } from '@material-ui/styles';
+
+const theme = createMuiTheme({
+  palette: {
+    primary: { main: '#2B4C6F'},
+    //secondary: {  main: '#11cb5f', },
+  },
+});
 
 
 function App() {
   return (
     <BrowserRouter basename={'/panel'}>
+      <StylesProvider injectFirst>
+      <ThemeProvider theme={theme}>
       <MainLayout>
         <Switch>
           <Route exact path={`${process.env.PUBLIC_URL}/`} component={Dashboard} />
@@ -33,6 +45,8 @@ function App() {
 
         </Switch>
       </MainLayout>
+      </ThemeProvider>
+      </StylesProvider>
     </BrowserRouter>
   );
 }

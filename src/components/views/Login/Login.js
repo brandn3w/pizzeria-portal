@@ -3,7 +3,7 @@ import styles from './Login.module.scss';
 
 function Login() {
     return (
-        <div classname={styles.component}>
+        <div className={styles.component}>
             <h2>Login View</h2>
         </div>
     )
