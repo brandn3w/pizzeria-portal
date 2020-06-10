@@ -8,17 +8,14 @@ import Container from '@material-ui/core/Container';
 const MainLayout = props => (
   <div>
     <AppBar>
-    <Container>
-      <Toolbar disableGutters>
-        
+      <Container>
+        <Toolbar disableGutters>
           <PageNav />
-        
-      </Toolbar>
+        </Toolbar>
       </Container>
     </AppBar>
-    
     <Container maxWidth='lg'>
-    <Toolbar />
+      <Toolbar />
       {props.children}
     </Container>
   </div >
