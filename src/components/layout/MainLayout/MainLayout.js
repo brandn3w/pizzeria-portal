@@ -20,7 +20,7 @@ const MainLayout = props => (
     </Container>
   </div >
 
-)
+);
 
 
 export default MainLayout;
