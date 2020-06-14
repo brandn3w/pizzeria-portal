@@ -1,8 +1,36 @@
-@import "../../../styles/settings.scss";
-
-$base-size: 12px;
+@import '../../../styles/settings.scss';
 
 .component {
-  display: flex;
-  justify-content: start;
+  padding: $base-size;
+
+  .tableHead {
+    text-align: center;
+  }
+
+  .hour,
+  .tableHead {
+    font-size: 17px;
+    font-weight: 500;
+  }
+
+  .textField,
+  .picker {
+    margin: 0 20px 20px 0;
+  }
+
+  .dropdown {
+    margin: 20px 20px 20px 0;
+    min-width: 120px;
+  }
+
+  .keys {
+    text-transform: capitalize;
+  }
+
+  .center {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+  }
 }
