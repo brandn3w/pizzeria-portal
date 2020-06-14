@@ -1,15 +1,15 @@
 import React from 'react';
 
 import DateFnsUtils from '@date-io/date-fns';
-import { MuiPickersUtilsProvider, KeyboardDatePicker, KeyboardTimePicker} from '@material-ui/pickers';
+import { MuiPickersUtilsProvider, KeyboardDatePicker, KeyboardTimePicker } from '@material-ui/pickers';
 
-const DatePicker =()=>{
-    const [selectDate, setDate] = React.useState(new Date('2014-08-18T21:11:54'));
-const handleDateChange =date=>{
+const DatePicker = () => {
+  const [selectDate, setDate] = React.useState(new Date('2014-08-18T21:11:54'));
+  const handleDateChange = date => {
     setDate(date);
-}
-return(
-           <div>
+  }
+  return (
+    <div>
       <MuiPickersUtilsProvider utils={DateFnsUtils}>
         <KeyboardDatePicker
           className={styles.picker}
@@ -35,9 +35,9 @@ return(
           }}
         />
       </MuiPickersUtilsProvider>
-    </div> 
- 
-);
+    </div>
+
+  );
 };
 
 export default DatePicker;

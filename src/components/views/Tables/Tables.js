@@ -58,7 +58,7 @@ const renderActions = status => {
           <div>
             <Button component={Link} variant="contained" color="secondary" to={`${process.env.PUBLIC_URL}/tables/booking/new`}>
               New Booking
-    </Button>
+            </Button>
           </div>
           <div>
             <Button component={Link} variant="contained" color="secondary" to={`${process.env.PUBLIC_URL}/tables/events/new`}>
