@@ -1,5 +1,5 @@
 import React from 'react';
-import styles from './Dashboard.module.scss';
+import styles from '../Dashboard/Dashboard.module.scss';
 import AppBar from '@material-ui/core/AppBar';
 import Toolbar from '@material-ui/core/Toolbar';
 import Typography from '@material-ui/core/Typography';

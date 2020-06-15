@@ -1,7 +1,7 @@
 import React from 'react';
 import MainLayout from './components/layout/MainLayout/MainLayout';
 import { BrowserRouter, Route, Switch } from 'react-router-dom';
-import Dashboard from '../src/Dashboard';
+import Dashboard from './components/views/Dashboard/Dashboard';
 import Login from './components/views/Login/Login';
 import Waiter from './components/views/Waiter/Waiter';
 import Tables from './components/views/Tables/Tables';
