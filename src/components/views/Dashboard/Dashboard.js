@@ -13,7 +13,7 @@ const Dashboard = () => {
         <div>
             <AppBar position='static'>
                 <Toolbar>
-                    <Typography classname={styles.header} variant="h5">
+                    <Typography className={styles.header} variant="h5">
                         {'Orders:'}
                     </Typography>
                 </Toolbar>

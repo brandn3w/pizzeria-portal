@@ -3,7 +3,7 @@ import MainLayout from './components/layout/MainLayout/MainLayout';
 import { BrowserRouter, Route, Switch } from 'react-router-dom';
 import Dashboard from './components/views/Dashboard/Dashboard';
 import Login from './components/views/Login/Login';
-import Waiter from './components/views/Waiter/Waiter';
+import Waiter from './components/views/Waiter/WaiterContainer';
 import Tables from './components/views/Tables/Tables';
 import Kitchen from './components/views/Kitchen/Kitchen';
 import TablesBookingId from './components/views/Tables/TablesBookingId';
@@ -15,6 +15,8 @@ import WaiterOrderNew from './components/views/Waiter/WaiterOrderNew';
 import { StylesProvider } from '@material-ui/core/styles';
 import { createMuiTheme } from '@material-ui/core/styles';
 import { ThemeProvider } from '@material-ui/styles';
+import {Provider} from 'react-redux';
+import store from '../src/redux/store';
 
 const theme = createMuiTheme({
   palette: {
@@ -26,6 +28,7 @@ const theme = createMuiTheme({
 
 function App() {
   return (
+    <Provider store={store}>
     <BrowserRouter basename={'/panel'}>
       <StylesProvider injectFirst>
         <ThemeProvider theme={theme}>
@@ -48,6 +51,7 @@ function App() {
         </ThemeProvider>
       </StylesProvider>
     </BrowserRouter>
+    </Provider>
   );
 }
 
