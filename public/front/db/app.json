@@ -285,10 +285,17 @@
     }  
   ],
   "tables":[
-    {
-      "id": 6, 
+    { "id": 1, 
+      "status": "free",
+      "order": 123
+    },
+    { "id": 2, 
       "status": "paid",
       "order": 456
+    },
+    { "id": 3, 
+      "status": "paid",
+      "order": 789
     }
   ]
 }

@@ -16,6 +16,7 @@ class Waiter extends React.Component {
       active: PropTypes.bool,
       error: PropTypes.node,
     }),
+    tables: PropTypes.object,
   }
 
 

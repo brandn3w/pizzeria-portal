@@ -35,7 +35,7 @@ export const fetchFromAPI = () => {
   };
 };
 /* reducer */
-export default function reducer(statePart = {},
+export default function reducer(statePart = [],
   action = {}) {
   switch (action.type) {
     case FETCH_START: {
