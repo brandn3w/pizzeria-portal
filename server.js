@@ -4,7 +4,7 @@ const fs = require('fs');
 const path = require('path');
 const jsonServer = require('json-server');
 const server = jsonServer.create();
-const router = jsonServer.router('public/app.json');
+const router = jsonServer.router('public/front/db/app.json');
 const middlewares = jsonServer.defaults({
   static: 'public',
   noCors: false,
