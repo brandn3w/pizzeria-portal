@@ -18,12 +18,15 @@ class Waiter extends React.Component {
     }),
   }
 
-  componentDidMount(){
+
+  // its called one is ready for render.
+  componentDidMount() {
     const { fetchTables } = this.props;
-    fetchTables();
+    //If waiter is called but not defined dont call fetchTables action.
+    fetchTables && fetchTables();
   }
 
-  renderActions(status){
+  renderActions(status) {
     switch (status) {
       case 'free':
         return (
@@ -59,59 +62,68 @@ class Waiter extends React.Component {
 
   render() {
     console.log(this.props)
-    const { loading: { active, error }, tables } = this.props;
+    const { loading, tables } = this.props;
 
-    if(active || !tables.length){
-      return (
-        <Paper className={styles.component}>
-          <p>Loading...</p>
-        </Paper>
-      );
-    } else if(error) {
-      return (
-        <Paper className={styles.component}>
-          <p>Error! Details:</p>
-          <pre>{error}</pre>
-        </Paper>
-      );
-    } else {
-      return (
-        <Paper className={styles.component}>
-          <Table>
-            <TableHead>
-              <TableRow>
-                <TableCell>Table</TableCell>
-                <TableCell>Status</TableCell>
-                <TableCell>Order</TableCell>
-                <TableCell>Action</TableCell>
-              </TableRow>
-            </TableHead>
-            <TableBody>
-              {tables.map(row => (
-                <TableRow key={row.id}>
-                  <TableCell component="th" scope="row">
-                    {row.id}
-                  </TableCell>
-                  <TableCell>
-                    {row.status}
-                  </TableCell>
-                  <TableCell>
-                    {row.order && (
-                      <Button to={`${process.env.PUBLIC_URL}/waiter/order/${row.order}`}>
-                        {row.order}
-                      </Button>
-                    )}
-                  </TableCell>
-                  <TableCell>
-                    {this.renderActions(row.status)}
-                  </TableCell>
+    if (loading) {
+      const { active, error } = loading;
+
+      if (active || !tables.length) {
+        return (
+          <Paper className={styles.component}>
+            <p>Loading...</p>
+          </Paper>
+        );
+      } else if (error) {
+        return (
+          <Paper className={styles.component}>
+            <p>Error! Details:</p>
+            <pre>{error}</pre>
+          </Paper>
+        );
+      } else {
+        return (
+          <Paper className={styles.component}>
+            <Table>
+              <TableHead>
+                <TableRow>
+                  <TableCell>Table</TableCell>
+                  <TableCell>Status</TableCell>
+                  <TableCell>Order</TableCell>
+                  <TableCell>Action</TableCell>
                 </TableRow>
-              ))}
-            </TableBody>
-          </Table>
-        </Paper>
-      );
+              </TableHead>
+              <TableBody>
+                {tables.map(row => (
+                  <TableRow key={row.id}>
+                    <TableCell component="th" scope="row">
+                      {row.id}
+                    </TableCell>
+                    <TableCell>
+                      {row.status}
+                    </TableCell>
+                    <TableCell>
+                      {row.order && (
+                        <Button to={`${process.env.PUBLIC_URL}/waiter/order/${row.order}`}>
+                          {row.order}
+                        </Button>
+                      )}
+                    </TableCell>
+                    <TableCell>
+                      {this.renderActions(row.status)}
+                    </TableCell>
+                  </TableRow>
+                ))}
+              </TableBody>
+            </Table>
+          </Paper>
+        );
+      }
     }
+    else {
+
+      return null;
+    }
+
   }
 }
 

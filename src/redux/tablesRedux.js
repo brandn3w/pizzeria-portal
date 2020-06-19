@@ -2,8 +2,8 @@ import Axios from 'axios';
 import { api } from "../settings";
 
 /* selectors */
-export const getAll = ({tables}) => tables.data;
-export const getLoadingState = ({tables}) => tables.loading;
+export const getAll = ({ tables }) => tables.data;
+export const getLoadingState = ({ tables }) => tables.loading;
 
 /* action name creator */
 const reducerName = 'tables';
@@ -35,7 +35,7 @@ export const fetchFromAPI = () => {
   };
 };
 /* reducer */
-export default function reducer(statePart = [],
+export default function reducer(statePart = {},
   action = {}) {
   switch (action.type) {
     case FETCH_START: {
