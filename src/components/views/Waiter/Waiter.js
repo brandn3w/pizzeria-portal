@@ -8,6 +8,7 @@ import TableHead from '@material-ui/core/TableHead';
 import TableRow from '@material-ui/core/TableRow';
 import Paper from '@material-ui/core/Paper';
 import Button from '@material-ui/core/Button';
+import { Link } from 'react-router-dom';
 
 class Waiter extends React.Component {
   static propTypes = {
@@ -27,34 +28,49 @@ class Waiter extends React.Component {
     fetchTables && fetchTables();
   }
 
-  renderActions(status) {
+  renderActions(orderId, status) {
+    const { updateStatus } = this.props;
     switch (status) {
       case 'free':
         return (
-          <>
-            <Button>thinking</Button>
-            <Button>new order</Button>
-          </>
+          <div className={styles.buttons}>
+            <Button onClick={() => updateStatus(orderId, 'Thinking')} className={styles.buttons} component={Link} variant="contained" color="primary" to={`${process.env.PUBLIC_URL}/waiter/order/new`}>
+              Thinking
+              </Button>
+            <Button onClick={() => updateStatus(orderId, 'New order')} className={styles.buttons} component={Link} variant="contained" color="primary" to={`${process.env.PUBLIC_URL}/waiter/order/new`}>
+              New order
+              </Button>
+          </div>
         );
       case 'thinking':
         return (
-          <Button>new order</Button>
+          <Button onClick={() => updateStatus(orderId, 'New order')} className={styles.buttons} component={Link} variant="contained" color="primary" to={`${process.env.PUBLIC_URL}/waiter/order/new`}>
+            New order
+          </Button>
         );
       case 'ordered':
         return (
-          <Button>prepared</Button>
+          <Button onClick={() => updateStatus(orderId, 'Prepared')} className={styles.buttons} component={Link} variant="contained" color="primary" to={`${process.env.PUBLIC_URL}/waiter/order/123abc`}>
+            Prepared
+          </Button>
         );
       case 'prepared':
         return (
-          <Button>delivered</Button>
+          <Button onClick={() => updateStatus(orderId, 'Delivered')} className={styles.buttons} component={Link} variant="contained" color="primary" to={`${process.env.PUBLIC_URL}/waiter/order/123abc`}>
+            Delivered
+          </Button>
         );
       case 'delivered':
         return (
-          <Button>paid</Button>
+          <Button onClick={() => updateStatus(orderId, 'Paid')} className={styles.buttons} component={Link} variant="contained" color="primary" to={`${process.env.PUBLIC_URL}/waiter/order/123abc`}>
+            Paid
+          </Button>
         );
       case 'paid':
         return (
-          <Button>free</Button>
+          <Button> onClick={() => updateStatus(orderId, 'Free')} className={styles.buttons} component={Link} variant="contained" color="primary" to={`${process.env.PUBLIC_URL}/waiter/order/123abc`}
+            Free
+          </Button>
         );
       default:
         return null;
